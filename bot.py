@@ -1,7 +1,7 @@
 """
 🌊 See The Sea FM Bot для Telegram
 =====================================
-Underground radio station — Techno, Trance, Deep, Chillout
+Радио с лучшими треками Techno, Trance, Deep House, Tech House, Chillout,  Progressive House
 
 УСТАНОВКА:
     pip install python-telegram-bot==21.3 requests
@@ -42,10 +42,10 @@ WEBAPP_URL = ""  # например: "https://твой-юзернейм.github.i
 # Прямая ссылка на поток See The Sea FM
 STREAM_URL = "https://stream.zeno.fm/f3wvbbqmdg8uv"  # fallback, будет уточнён при поиске
 STATION_NAME = "See The Sea FM 🌊"
-STATION_GENRE = "Techno · Trance · Deep · Chillout"
+STATION_GENRE = "Techno · Trance · Deep House "
 STATION_COUNTRY = "Узбекистан 🇺🇿"
 STATION_SITE = "https://seethesearecords.wixsite.com/home"
-STATION_LOGO = "https://static.wixstatic.com/media/6062a7_fbcc0346d0fe43ac8a6e08d6c6b915aa~mv2_d_1750_1750_s_2.png"
+STATION_LOGO = "https://static.wixstatic.com/media/1b0b32_4d864e5a7d8e4566b6414a9ae0c8b1d4~mv2_d_1577_1577_s_2.png/v1/fill/w_206,h_206,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/1b0b32_4d864e5a7d8e4566b6414a9ae0c8b1d4~mv2_d_1577_1577_s_2.png"
 
 # ──────────────────────────────────────────────
 logging.basicConfig(
@@ -88,7 +88,7 @@ def main_keyboard(webapp_url: str = "") -> InlineKeyboardMarkup:
     """Главная клавиатура бота."""
     keyboard = []
     if webapp_url:
-        keyboard.append([InlineKeyboardButton("🎧 Слушать в Telegram", web_app=WebAppInfo(url=webapp_url))])
+        keyboard.append([InlineKeyboardButton("🎧 Слушать в Telegram", web_app=WebAppInfo(https://www.radioguide.fm/internet-radio-uzbekistan/see-the-sea-fm))])
     keyboard += [
         [InlineKeyboardButton("▶️ Открыть в браузере", url=STREAM_URL)],
         [InlineKeyboardButton("ℹ️ О радио", callback_data="info"),
