@@ -88,7 +88,7 @@ def main_keyboard(webapp_url: str = "") -> InlineKeyboardMarkup:
     """Главная клавиатура бота."""
     keyboard = []
     if webapp_url:
-        keyboard.append([InlineKeyboardButton("🎧 Слушать в Telegram", web_app=WebAppInfo(https://www.radioguide.fm/internet-radio-uzbekistan/see-the-sea-fm))])
+        keyboard.append([InlineKeyboardButton("🎧 Слушать в Telegram", web_app=WebAppInfo(https://myradio24.org/seethesea))])
     keyboard += [
         [InlineKeyboardButton("▶️ Открыть в браузере", url=STREAM_URL)],
         [InlineKeyboardButton("ℹ️ О радио", callback_data="info"),
@@ -192,7 +192,7 @@ async def send_stream(message, context: ContextTypes.DEFAULT_TYPE, edit=False) -
     text = (
         f"🎧 *{STATION_NAME}*\n"
         f"_{STATION_GENRE}_\n\n"
-        f"▶️ Нажми Play чтобы слушать!\n\n"
+       f"▶️ Нажми Play чтобы слушать прямо в Telegram!\n\n"
         f"Или открой ссылку в браузере / медиаплеере:\n`{url}`"
     )
     keyboard = InlineKeyboardMarkup([
