@@ -89,7 +89,7 @@ def main_keyboard(webapp_url: str = "") -> InlineKeyboardMarkup:
     keyboard = []
     if webapp_url:
         keyboard.append([InlineKeyboardButton("🎧 Слушать в Telegram", web_app=WebAppInfo(url="https://myradio24.org/seethesea"))])
-keyboard += [
+    keyboard += [
         [InlineKeyboardButton("▶️ Открыть в браузере", url=STREAM_URL)],
         [InlineKeyboardButton("ℹ️ О радио", callback_data="info"),
          InlineKeyboardButton("🎵 Жанры", callback_data="genres")],
