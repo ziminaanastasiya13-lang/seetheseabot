@@ -116,7 +116,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         f"Выбери действие 👇"
     )
     await update.message.reply_photo(
-        photo=open("logo circle копия.png", "rb"),
+        photo=open("logo.png", "rb"),
         caption=text,
         parse_mode="Markdown",
         reply_markup=main_keyboard(WEBAPP_URL),
