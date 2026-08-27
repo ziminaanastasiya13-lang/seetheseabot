@@ -39,7 +39,7 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN", "ВСТАВЬ_ТОКЕН_СЮДА")
 # URL мини-приложения (GitHub Pages), вставь после публикации
 WEBAPP_URL = "https://ziminaanastasiya13-lang.github.io/seetheseabot/"
 # Прямая ссылка на поток See The Sea FM
-STREAM_URL = "https://stream.zeno.fm/f3wvbbqmdg8uv"  # fallback, будет уточнён при поиске
+STREAM_URL = "https://myradio24.org/seethesea"  # fallback, будет уточнён при поиске
 STATION_NAME = "See The Sea FM 🌊"
 STATION_GENRE = "Techno · Trance · Deep House "
 STATION_COUNTRY = "Узбекистан 🇺🇿"
