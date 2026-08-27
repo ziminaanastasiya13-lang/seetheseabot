@@ -37,8 +37,7 @@ from telegram.ext import (
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "ВСТАВЬ_ТОКЕН_СЮДА")
 
 # URL мини-приложения (GitHub Pages), вставь после публикации
-WEBAPP_URL = ""  # например: "https://твой-юзернейм.github.io/see-the-sea-radio/"
-
+WEBAPP_URL = "https://myradio24.org/seethesea"
 # Прямая ссылка на поток See The Sea FM
 STREAM_URL = "https://stream.zeno.fm/f3wvbbqmdg8uv"  # fallback, будет уточнён при поиске
 STATION_NAME = "See The Sea FM 🌊"
