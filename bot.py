@@ -87,7 +87,7 @@ def main_keyboard(webapp_url: str = "") -> InlineKeyboardMarkup:
     """Главная клавиатура бота."""
     keyboard = []
     if webapp_url:
-        keyboard.append([InlineKeyboardButton("🎧 Слушать в Telegram", web_app=WebAppInfo(url="https://ziminaanastasiya13-lang.github.io/seetheseabot/"))])
+        keyboard.append([InlineKeyboardButton("🎧 Слушать в Telegram", web_app=WebAppInfo(url=webapp_url))])
     keyboard += [
         [InlineKeyboardButton("▶️ Открыть в браузере", url=STREAM_URL)],
         [InlineKeyboardButton("ℹ️ О радио", callback_data="info"),
