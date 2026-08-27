@@ -37,7 +37,7 @@ from telegram.ext import (
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "ВСТАВЬ_ТОКЕН_СЮДА")
 
 # URL мини-приложения (GitHub Pages), вставь после публикации
-WEBAPP_URL = "https://myradio24.org/seethesea"
+WEBAPP_URL = "https://ziminaanastasiya13-lang.github.io/seetheseabot/index/""
 # Прямая ссылка на поток See The Sea FM
 STREAM_URL = "https://stream.zeno.fm/f3wvbbqmdg8uv"  # fallback, будет уточнён при поиске
 STATION_NAME = "See The Sea FM 🌊"
@@ -83,7 +83,7 @@ def find_stream_url() -> str:
     return STREAM_URL
 
 
-def main_keyboard(webapp_url: str = "") -> InlineKeyboardMarkup:
+def main_keyboard web_app=WebAppInfo(url="https://ziminaanastasiya13-lang.github.io/seetheseabot/index/") -> InlineKeyboardMarkup:
     """Главная клавиатура бота."""
     keyboard = []
     if webapp_url:
