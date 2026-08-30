@@ -29,7 +29,7 @@ def get_now_playing():
     # Метод 1: ICY метаданные прямо из потока (zeno.fm поддерживает ICY)
     try:
         r = requests.get(
-            "https://stream.zeno.fm/f3wvbbqmdg8uv",
+            "https://listen2.myradio24.com/seethesea",
             headers={"User-Agent": "Mozilla/5.0", "Icy-MetaData": "1"},
             stream=True, timeout=5
         )
