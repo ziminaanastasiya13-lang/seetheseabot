@@ -20,6 +20,7 @@ try:
     import nowplaying_api
 except Exception as e:
     print(f"API сервер не запустился: {e}")
+    nowplaying_api = None
 
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, WebAppInfo
 from telegram.ext import (
