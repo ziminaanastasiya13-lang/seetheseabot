@@ -109,21 +109,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Команда /start — главное меню."""
     user = update.effective_user
 
-    artist, track, artwork = "", "", ""
-    if nowplaying_api:
-        try:
-            now = nowplaying_api.get_now_playing()
-            artist = now.get("artist", "")
-            track = now.get("track", "")
-            artwork = now.get("artwork", "")
-        except Exception as e:
-            logger.warning(f"Не удалось получить now playing: {e}")
-
-    now_playing_line = ""
-    if artist or track:
-        now_playing_line = f"\n🎵 Сейчас играет: *{artist} — {track}*\n"
-
-    text = (
+       text = (
         f"🌊 *Привет, {user.first_name}!*\n\n"
         f"Добро пожаловать в *See The Sea FM Bot* — андеграундное радио "
         f"с лучшими треками techno, trance, deep и chillout!\n"
