@@ -109,7 +109,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Команда /start — главное меню."""
     user = update.effective_user
 
-       text = (
+        text = (
         f"🌊 *Привет, {user.first_name}!*\n\n"
         f"Добро пожаловать в *See The Sea FM Bot* — андеграундное радио "
         f"с лучшими треками techno, trance, deep и chillout!\n"
