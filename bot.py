@@ -105,7 +105,7 @@ def back_keyboard() -> InlineKeyboardMarkup:
 
 # ──────────────────── HANDLERS ────────────────────
 
-aasync def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Команда /start — главное меню."""
     user = update.effective_user
 
