@@ -439,6 +439,37 @@
   audio.preload = "none";
   audio.crossOrigin = "anonymous";
 
+  // ── Экран блокировки / шторка уведомлений (Media Session API) ──
+  function updateMediaSession(title, artist, artworkUrl){
+    if (!('mediaSession' in navigator)) return;
+    try{
+      const artwork = artworkUrl
+        ? [{ src: artworkUrl, sizes: '400x400', type: 'image/jpeg' }]
+        : [];
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: title || 'See The Sea FM',
+        artist: artist || 'Underground radio',
+        album: 'See The Sea FM',
+        artwork
+      });
+    }catch(e){ /* браузер может не поддерживать некоторые поля — не критично */ }
+  }
+
+  function setupMediaSessionHandlers(){
+    if (!('mediaSession' in navigator)) return;
+    try{
+      navigator.mediaSession.setActionHandler('play', () => {
+        if (!isPlaying) playBtn.click();
+      });
+      navigator.mediaSession.setActionHandler('pause', () => {
+        if (isPlaying) playBtn.click();
+      });
+      navigator.mediaSession.setActionHandler('stop', () => {
+        if (isPlaying) playBtn.click();
+      });
+    }catch(e){ /* некоторые action handlers могут быть не поддержаны — пропускаем */ }
+  }
+
   const playBtn = document.getElementById('playBtn');
   const statusText = document.getElementById('statusText');
   const errorMsg = document.getElementById('errorMsg');
@@ -478,6 +509,7 @@
       isPlaying = false;
       document.body.classList.remove('playing');
       updateStatus();
+      if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'paused';
       return;
     }
     if (!audio.src){ audio.src = STREAM_URL; }
@@ -489,6 +521,9 @@
       document.body.classList.add('playing');
       updateStatus();
       if (tg && tg.HapticFeedback) tg.HapticFeedback.impactOccurred('light');
+      setupMediaSessionHandlers();
+      if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'playing';
+      updateMediaSession(trackTitleEl.textContent, trackArtistEl.textContent, coverImg.classList.contains('loaded') ? coverImg.src : '');
       fetchNowPlaying();
     }).catch(() => {
       isLoading = false;
@@ -568,6 +603,7 @@
       coverThumb.classList.remove('has-image');
       coverImg.classList.remove('loaded');
       coverAmbient.classList.remove('visible');
+      updateMediaSession(trackTitleEl.textContent, trackArtistEl.textContent, '');
       return;
     }
     coverImg.onload = () => {
@@ -575,6 +611,7 @@
       coverThumb.classList.add('has-image');
       coverAmbient.style.backgroundImage = `url(${url})`;
       coverAmbient.classList.add('visible');
+      updateMediaSession(trackTitleEl.textContent, trackArtistEl.textContent, url);
     };
     coverImg.src = url;
   }
