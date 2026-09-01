@@ -130,7 +130,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         f"Выбери действие 👇"
     )
 
-    photo = open("logo circle копия.png", "rb")
+    photo = open("logo.png", "rb")
 
     await update.message.reply_photo(
         photo=photo,
