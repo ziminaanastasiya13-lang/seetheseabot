@@ -127,8 +127,6 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         f"🌊 *Привет, {user.first_name}!*\n\n"
         f"Добро пожаловать в *See The Sea FM Bot* — андеграундное радио "
         f"с лучшими треками techno, trance, deep и chillout!\n"
-        f"{now_playing_line}\n"
-        f"Никакой рекламы, никаких разговоров — только качественная музыка 24/7.\n\n"
         f"Выбери действие 👇"
     )
 
